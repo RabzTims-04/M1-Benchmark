@@ -264,20 +264,24 @@ const emptyList = function(){
 
 // 41) Add an eventListener to alert when the mouse is over a link, displaying the URL
 
-// document.getElementsByTagName("a").onmouseover = function() {mouseOver()};
-// document.getElementsByTagName("a").onmouseout = function() {mouseOut()};
-// function mouseOver() {
+//  const mouseOver = function(event){
+    let url = document.getElementsByTagName('a')
+    let url2 = document.getElementsByTagName('a')
 
-//     let allLinks = document.getElementsByTagName("a")
-//     for(let i=0; i<allLinks.length; i++){
-//         allLinks[i].style.display = 'href'
-//     }
-   
-//   }
-  
-//   function mouseOut() {
-//     document.getElementsByTagName("a").style.color = "black";
-//   }
+    for(let i=0; i<url.length; i++){
+        url[i].addEventListener('mouseover', function(event){
+            let link = url[i].getAttribute("href")
+            let urlShow = document.createElement('span')
+            urlShow.innerText = link
+            url2[i].parentElement.insertBefore(urlShow, url[i])
+            event.target.classList.add('123')
+
+        },
+        false
+        )
+    }
+
+
 
 // 42) Add a button to hide every image on the page
 
@@ -297,26 +301,28 @@ const hideButton = function(){
 
 
 // 43) Add a button to hide and show the table from the page
-let toggle = false
+
 const hideShowTableButton = function(){
     
     let hideShowButton = document.createElement('button')
-    hideShowButton.innerText = 'Hide/Show Table'   
+    
+    hideShowButton.innerText = 'Hide/Show Table' 
+    let toggle = false  
     hideShowButton.addEventListener('click', function(){
         let table = document.getElementsByTagName('table')
-        for(let i=0; i<table.length; i++){
+        
+        for(let i=0; i<table.length; i++){           
             if(toggle === true){
                 table[i].style.display = 'none'
             }
             else{
                 table[i].style.display = 'block'
-            }            
-        }     
+            }                       
+        }              
     })
-    
+    toggle = !toggle
     let bodyParent = document.querySelector('body')  
-    bodyParent.appendChild(hideShowButton)
-    toggle = !toggle   
+    bodyParent.appendChild(hideShowButton)     
 }
 
 // 44) Write a function to sum every number inside the TD (if the content is numeric)
@@ -338,7 +344,7 @@ const sumTD = function(){
 const deleteLastLetter = function(){
     let title = document.querySelector('h1')
     titleText = title.innerText
-    title.addEventListener('click', function(){
+    title.addEventListener('mouseover', function(){
       let newString = titleText.substring(0, titleText.length - 1)       
       return newString 
     })
