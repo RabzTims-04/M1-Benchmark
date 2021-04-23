@@ -274,7 +274,7 @@ const emptyList = function(){
             let urlShow = document.createElement('span')
             urlShow.innerText = link
             url2[i].parentElement.insertBefore(urlShow, url[i])
-            event.target.classList.add('123')
+            event.target.classList.add('url-mouse')
 
         },
         false
@@ -358,6 +358,18 @@ const deleteLastLetter = function(){
 
 // 47) Add a button DELETE, on click it should delete a random TD from the page
 // 48) Add a pink border to a cell when the mouse is over it
+
+const addBorder = function(){
+
+    let tdCell = document.querySelectorAll('tr td')
+
+    for(let i=0; i<tdCell.length; i++){
+        td[i].addEventListener('mouseover', function(event){
+            if(event.target.classList('.td'))
+        })
+    }
+
+}
 // 49) Write a function to add a table with 4 rows and 3 columns programmatically
 // 50) Write a function to remove the table from the page
 
