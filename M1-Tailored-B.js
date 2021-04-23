@@ -264,22 +264,22 @@ const emptyList = function(){
 
 // 41) Add an eventListener to alert when the mouse is over a link, displaying the URL
 
-//  const mouseOver = function(event){
-    let url = document.getElementsByTagName('a')
-    let url2 = document.getElementsByTagName('a')
+// //  const mouseOver = function(event){
+//     let url = document.getElementsByTagName('a')
+//     let url2 = document.getElementsByTagName('a')
 
-    for(let i=0; i<url.length; i++){
-        url[i].addEventListener('mouseover', function(event){
-            let link = url[i].getAttribute("href")
-            let urlShow = document.createElement('span')
-            urlShow.innerText = link
-            url2[i].parentElement.insertBefore(urlShow, url[i])
-            event.target.classList.add('url-mouse')
+//     for(let i=0; i<url.length; i++){
+//         url[i].addEventListener('mouseover', function(event){
+//             let link = url[i].getAttribute("href")
+//             let urlShow = document.createElement('span')
+//             urlShow.innerText = link
+//             url2[i].parentElement.insertBefore(urlShow, url[i])
+//             event.target.classList.add('url-mouse')
 
-        },
-        false
-        )
-    }
+//         },
+//         false
+//         )
+//     }
 
 
 
@@ -359,17 +359,17 @@ const deleteLastLetter = function(){
 // 47) Add a button DELETE, on click it should delete a random TD from the page
 // 48) Add a pink border to a cell when the mouse is over it
 
-const addBorder = function(){
+// const addBorder = function(){
 
-    let tdCell = document.querySelectorAll('tr td')
+//     let tdCell = document.querySelectorAll('tr td')
 
-    for(let i=0; i<tdCell.length; i++){
-        td[i].addEventListener('mouseover', function(event){
-            if(event.target.classList('.td'))
-        })
-    }
+//     for(let i=0; i<tdCell.length; i++){
+//         td[i].addEventListener('mouseover', function(event){
+//             if(event.target.classList('.td'))
+//         })
+//     }
 
-}
+// }
 // 49) Write a function to add a table with 4 rows and 3 columns programmatically
 // 50) Write a function to remove the table from the page
 
