@@ -1,0 +1,153 @@
+body{
+    width: 100%;
+    text-align: center;
+}
+
+img{
+    height: 50px;
+	background-attachment: fixed;
+}
+
+table #myTable {
+    width:70%; 
+    margin-left:15%; 
+    margin-right:15%;
+  }
+
+  table.center {
+    width:70%; 
+    margin-left:15%; 
+    margin-right:15%;
+  }
+
+h1{
+    text-align: center;
+}
+
+a{
+    color: rgb(209, 15, 15);
+}
+
+.table-borders, td, th{
+    padding: 10px;
+    border: 1px solid black;
+    border-collapse: separate;
+    border-color: green;
+}
+
+td, th {
+    border-left:solid black 2px;
+    border-top:solid black 2px;
+}
+
+th{
+    background-color: cyan;
+    border-color: green;
+    border-bottom: 2px dotted red;
+    border-top: 2px dotted red;
+}
+
+tr th:first-child{
+    border-left:2px dotted red;
+}
+
+tr th:last-child{
+    border-right:2px dotted red;
+}
+
+td{
+    border-color: green;
+}
+
+table{
+    border-radius:6px;
+    -moz-border-radius:6px;
+}
+
+p{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 80px;
+    margin-left: 80px;
+}
+
+.font, .bold{
+    font-weight: bold;
+    font-size: large;
+}
+
+.display{
+    display: none;
+}
+
+tr td {
+    border-top: 2px dotted red;
+    border-bottom: 2px dotted red;
+  }
+  
+tr td:first-child {
+    border-left:2px dotted red;
+  }
+  
+tr td:last-child {
+    border-right: 2px dotted red;
+  }
+
+  .test{
+      background-color: red;
+  }
+
+  .ol-center {
+    text-align: center;
+    list-style-position: inside;
+  }
+
+  .ul-center {
+    text-align: center;
+    list-style-position: inside;
+  }
+
+  ul{
+    margin-right:5%;
+  }
+
+  ol{
+    margin-right:3%;
+  }
+
+  /* ol {
+    list-style: none;
+    counter-reset: my-awesome-counter;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+  }
+  ol li {
+    counter-increment: my-awesome-counter;
+    display: flex;
+    width: 50%;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+  ol li::before {
+    content: "0" counter(my-awesome-counter);
+    font-weight: bold;
+    font-size: 3rem;
+    margin-right: 0.5rem;
+    font-family: 'Abril Fatface', serif;
+    line-height: 1;
+  } */
+
+/* CSS EXERCISES
+
+        11) 
+        12) 
+        13) 
+        14) 
+        15) 
+        16) 
+        17)
+        18) 
+        19) 
+        20) 
