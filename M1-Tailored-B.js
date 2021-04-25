@@ -508,8 +508,8 @@ function deleteRand(){
 console.log('');
 
 // 48) Add a pink border to a cell when the mouse is over it
-// console.log('*************EXERCISE 48***************');
-// console.log('');
+console.log('*************EXERCISE 48***************');
+console.log('');
 // let border = true
 // const addBorder = function(){
 
@@ -535,6 +535,17 @@ const addBorder = function(){
 
 }
 addBorder()
+
+const removeBorder = function(){
+    let tdCell = document.getElementsByTagName('td')
+
+    for(let i=0; i<tdCell.length; i++){
+        tdCell[i].addEventListener("mouseout", c => c.target.classList.remove('pink-border')) 
+   
+    }
+}
+
+removeBorder()
 // const addBorder = function(){
 //     let tdCell = document.getElementsByTagName('td')
 
