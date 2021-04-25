@@ -6,9 +6,9 @@ console.log('');
 
 let x = 'John'
 let y = 'Doe'
+
 console.log(x + ' <> ' + y);
 console.log('');
-
 
 //22) Create an object with properties such name, surname, email
 console.log('*************EXERCISE 22***************');
@@ -27,6 +27,7 @@ console.log('*************EXERCISE 23***************');
 console.log('');
 
 delete user.email
+
 console.log(user);
 console.log('');
 
@@ -35,6 +36,7 @@ console.log('*************EXERCISE 24***************');
 console.log('');
 
 let stringArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+
 console.log(stringArray);
 console.log('');
 
@@ -151,40 +153,72 @@ const arraySum = function(arrayOne, arrayTwo){
     else{
         return `Sum of ${arrayTwo} = ${arrayTwoSum} is equal to sum of ${arrayOne} = ${arrayOneSum}`
     }
-
 }
 
 let arr1 = [1, 2, 3, 4, 5]
 let arr2 = [5, 6, 7, 8, 9]
+
 console.log(arraySum(arr1,arr2));
 console.log('');
-
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>DOM<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
  // 31) Get element with ID "container" from the page
+console.log('*************EXERCISE 31***************');
+console.log('');
 
   let container = document.getElementById('container')
+  
+  console.log(container);
+  console.log('');
 
  // 32) Get every "td" from the page
+console.log('*************EXERCISE 32***************');
+console.log('');
 
- let tableData = document.querySelectorAll('.table-borders tr td')
+ let tableData = document.querySelectorAll('table td')
+
+console.log(tableData);
+console.log('');
 
 // 33) Create a cycle that prints the text inside every td of the page
-
+console.log('*************EXERCISE 33***************');
+console.log('');
 
 for(let i=0; i<tableData.length; i++){
-     console.log(tableData[i]); 
+     console.log(tableData[i].innerText); 
 }
+
+console.log('*************     OR      ***************');
+
+for(let i=0; i<tableData.length; i++){
+    console.log(tableData[i]); 
+}
+
+console.log('');
 
 // 34) Write a function to change the heading of the page
+console.log('*************EXERCISE 34***************');
+console.log('');
 
+let bool = true
 const headingChange = function(){
     let heading = document.querySelector('h1')
-    heading.innerText = 'First Project M1'
+    if(bool === true){
+        heading.innerText = 'First Project M1'
+    }
+    else{
+        heading.innerText = 'My First Benchmark Project'
+    }
+    
+    bool = !bool  
 }
 
+console.log('');
+
 // 35) Write a function to add an extra row to the table
+console.log('*************EXERCISE 35***************');
+console.log('');
 
 const extraTableRow = function(){
 
@@ -207,7 +241,11 @@ const extraTableRow = function(){
 
 // extraTableRow()
 
+console.log('');
+
 // 36) Write a function to add the class "test" to each row in the table
+console.log('*************EXERCISE 36***************');
+console.log('');
 
 const addClasstest = function(){
     let tableRows = document.getElementsByTagName('tr')
@@ -218,37 +256,69 @@ const addClasstest = function(){
 
 // addClasstest()
 
-// 37) Write a function to add a red background to every link in the page
+console.log('');
 
+// 37) Write a function to add a red background to every link in the page
+console.log('*************EXERCISE 37***************');
+console.log('');
+
+let bg= true
 const redBackground = function(){
     let links = document.getElementsByTagName('a')
     for(let i=0; i<links.length; i++){
-        links[i].style.backgroundColor = "red"
+        if(bg === true){
+            links[i].style.backgroundColor = "red"
+        }
+        else{
+            links[i].style.backgroundColor = "white"
+        }        
     }
+    bg= !bg
 }
 
 // redBackground()
 
-// 38) Console log "Page loaded" when the page is correctly loaded
+console.log('');
 
-window.onload = function(){
-    console.log("Page is correctly loaded");
-}
+// 38) Console log "Page loaded" when the page is correctly loaded
+console.log('*************EXERCISE 38***************');
+console.log('');
+
+// window.onload = function(){
+//     console.log("Page is correctly loaded");
+// }
+
+console.log('Check End Of File');
+
+console.log('');
 
 // 39) Write a function to add new items to a UL
+console.log('*************EXERCISE 39***************');
+console.log('');
 
 const addNewItems = function(){
     //let newListItems = document.createElement('li')
     let parentUl = document.querySelectorAll('ul')
+    let input = document.getElementById('li-input')
+    let inputValue = input.value
 
-    for(let i=0; i<parentUl.length; i++){
-        parentUl[i].innerHTML += `<li>${''}</li>`
+   
+        if(inputValue === ''){
+            alert('text field empty, nothing to add in the list');
+        }        
+        else{
+            for(let i=0; i<parentUl.length; i++){
+            parentUl[i].innerHTML += `<li>${inputValue}</li>`
+        }       
     }
 }
-
 //addNewItems()
 
+console.log('');
+
 // 40) Write a function to empty a list
+console.log('*************EXERCISE 40***************');
+console.log('');
 
 const emptyList = function(){
     //let unOrderList = document.getElementsByTagName('ul')
@@ -260,9 +330,13 @@ const emptyList = function(){
 
 //emptyList()
 
+console.log('');
+
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>EXTRA<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
 // 41) Add an eventListener to alert when the mouse is over a link, displaying the URL
+console.log('*************EXERCISE 41***************');
+console.log('');
 
 // //  const mouseOver = function(event){
 //     let url = document.getElementsByTagName('a')
@@ -281,102 +355,259 @@ const emptyList = function(){
 //         )
 //     }
 
-
+console.log('');
 
 // 42) Add a button to hide every image on the page
+console.log('*************EXERCISE 42***************');
+console.log('');
 
-const hideButton = function(){
+const hideImageButton = function(){
 
     let hideImgButton = document.createElement('button')
     hideImgButton.innerText = 'Hide Images'
-    hideImgButton.addEventListener('click', function(){
-        let images = document.getElementsByTagName('img')
-        for(let i=0; i<images.length; i++){
-            images[i].style.display = 'none'
-        }
-    })
-    let bodyParent = document.querySelector('body')
+    let bodyParent = document.querySelector('.java-button')
+    hideImgButton.addEventListener('click', hideTableImg)     
     bodyParent.appendChild(hideImgButton)
 }
 
+let initialImage = true
+function hideTableImg(){
+    let images = document.getElementsByTagName('img')
+    for(let i=0; i<images.length; i++){
+        if(initialImage === true){
+            images[i].style.display = 'none'
+        }
+        else{
+            images[i].style.display = 'block'
 
-// 43) Add a button to hide and show the table from the page
-
-const hideShowTableButton = function(){
-    
-    let hideShowButton = document.createElement('button')
-    
-    hideShowButton.innerText = 'Hide/Show Table' 
-    let toggle = false  
-    hideShowButton.addEventListener('click', function(){
-        let table = document.getElementsByTagName('table')
-        
-        for(let i=0; i<table.length; i++){           
-            if(toggle === true){
-                table[i].style.display = 'none'
-            }
-            else{
-                table[i].style.display = 'block'
-            }                       
-        }              
-    })
-    toggle = !toggle
-    let bodyParent = document.querySelector('body')  
-    bodyParent.appendChild(hideShowButton)     
+            images[i].style.paddingLeft = '35%'           
+        }  
+    }
+    initialImage = !initialImage
 }
 
+
+console.log('');
+
+// 43) Add a button to hide and show the table from the page
+console.log('*************EXERCISE 43***************');
+console.log('');
+
+const hideShowTableButton = function(){
+    let hideShowButton = document.createElement('button')
+    let bodyParent = document.querySelector('.java-button') 
+    hideShowButton.innerText = 'Hide/Show Table'
+    hideShowButton.addEventListener('click', hideShow) 
+    bodyParent.appendChild(hideShowButton) 
+}
+
+let toggle = true
+function hideShow(){
+    let table = document.querySelectorAll('.table-div')
+    for(let i=0; i<table.length;i++){
+        if(toggle === true){
+            table[i].style.display = 'none'
+        }
+        else{
+            table[i].style.display = 'block'            
+        }
+    }
+    toggle = !toggle
+}
+
+console.log('');
+
 // 44) Write a function to sum every number inside the TD (if the content is numeric)
+console.log('*************EXERCISE 44***************');
+console.log('');
 
 const sumTD = function(){
     let tD = document.getElementsByTagName('td')
     let tdSum = 0
     for(let i=0; i<tD.length; i++){
-        let tdText = tD[i].innerText
-        if(tdText !== NaN){
+        let tdText = parseInt(tD[i].innerText)
+        console.log(tdText);
+        if(Number(tdText)){
             tdSum += tdText
-        }
+        }          
     }
-    return tdSum
+     return tdSum
 }
 
+console.log(`The sum of All td's are ${sumTD()}`);
+
+console.log('');
+
 // 45) Delete the last letter from the title each time the user clicks on it
+console.log('*************EXERCISE 45***************');
+console.log('');
 
 const deleteLastLetter = function(){
     let title = document.querySelector('h1')
-    titleText = title.innerText
-    title.addEventListener('mouseover', function(){
-      let newString = titleText.substring(0, titleText.length - 1)       
-      return newString 
-    })
+    // console.log(titleText);
+    console.log(title);
+    title.addEventListener('click', removeString)    
      
 }
 
+function removeString(){
+    let title = document.querySelector('h1')
+    titleText = title.innerText
+    let newTitle = titleText.slice(0, -1)
+    title.innerText = newTitle     
+}
+deleteLastLetter()
+
+console.log('');
 
 // 46) Change a single TD background color when the user clicks on it
+console.log('*************EXERCISE 46***************');
+console.log('');
 
+const singleTD = function(){
+    let tableData = document.getElementsByTagName('td')
 
+    for(let i=0; i<tableData.length; i++){
+        tableData[i].addEventListener('click', e => e.target.style.backgroundColor ='red')
+    }
+}
+singleTD()
+console.log('');
 
 // 47) Add a button DELETE, on click it should delete a random TD from the page
-// 48) Add a pink border to a cell when the mouse is over it
+console.log('*************EXERCISE 47***************');
+console.log('');
 
+const deleteTD = function(){
+    let deleteTdButton = document.createElement('button')
+    let bodyParent = document.querySelector('.java-button') 
+    deleteTdButton.innerText = 'Delete 1 TD'
+    deleteTdButton.addEventListener('click', deleteRand) 
+    bodyParent.appendChild(deleteTdButton) 
+}
+
+function deleteRand(){
+    // let tableCell = document.getElementsByTagName('td')
+    // let tableRow = document.querySelectorAll('.table-cell')
+    let tableRow = document.getElementById('myTable')
+    // console.log(tableRow);
+    // let randomArray = []
+
+    // for(let i=0; i<tableData.length; i++){
+    //     let random = Math.floor(Math.random() * tableData.length)
+    //         randomArray.push(random)
+    //     } 
+
+    for(let i=1; i<4; i++){
+        // let newRandom = randomArray[j]
+        tableRow.rows[i].deleteCell(-1)
+    }
+    // console.log(tableData);
+}
+
+console.log('');
+
+// 48) Add a pink border to a cell when the mouse is over it
+// console.log('*************EXERCISE 48***************');
+// console.log('');
+// let border = true
 // const addBorder = function(){
 
-//     let tdCell = document.querySelectorAll('tr td')
+//     let tdCell = document.getElementsByTagName('td')
 
 //     for(let i=0; i<tdCell.length; i++){
-//         td[i].addEventListener('mouseover', function(event){
-//             if(event.target.classList('.td'))
-//         })
+//         tdCell[i].addEventListener("mouseover", b => {if(border === true ){b.target.classList.add('pink-border')}else{b.target.classList.remove('pink-border')}})
+   
 //     }
+//     border = !border
 
 // }
+// addBorder()
+
+const addBorder = function(){
+
+    let tdCell = document.getElementsByTagName('td')
+
+    for(let i=0; i<tdCell.length; i++){
+        tdCell[i].addEventListener("mouseover", b => b.target.classList.add('pink-border')) 
+   
+    }
+
+}
+addBorder()
+// const addBorder = function(){
+//     let tdCell = document.getElementsByTagName('td')
+
+//     for(let i=0; i<tdCell.length; i++){
+//         tdCell[i].addEventListener('mouseover',borderPink)
+//     }
+// }
+// addBorder()
+
+// let border = true
+// function borderPink(event){
+//     let tdCell = document.getElementsByTagName('td')
+//     for(let i=0; i<tdCell.length; i++){
+//         if(border === true){
+//             tdCell[i].target.classList.add('pink-border')
+//         }
+//         else{
+//             tdCell[i].target.classList.remove('pink-border')
+//         }
+      
+//     }   
+//     border = !border
+// }
+
+   
+
+console.log('');
+
 // 49) Write a function to add a table with 4 rows and 3 columns programmatically
+console.log('*************EXERCISE 49***************');
+console.log('');
+
+const addTable = function(){
+    let parentTable = document.getElementsByClassName('new-table')[0]
+    let newTable = document.createElement('newTable')
+    tableBody = document.createElement('tableBody')
+
+    for(let i=0; i<4; i++){
+        let row = document.createElement('tr')
+        for(let j=0; j<3; j++){
+            let cell=document.createElement('td')
+            let cellText = document.createTextNode('cell in row' + i + ',column ' +j)
+            cell.appendChild(cellText)
+            row.appendChild(cell)
+        }
+        tableBody.appendChild(row)
+    }
+    newTable.appendChild(tableBody)
+    parentTable.appendChild(newTable)
+    newTable.setAttribute('border', '2')
+}
+
+console.log('');
+
 // 50) Write a function to remove the table from the page
+console.log('*************EXERCISE 50***************');
+console.log('');
+
+
+const removeTable = function(){
+
+   let tableRemove = document.getElementsByTagName('newTable')[0]
+   parentTable = tableRemove.parentElement   
+    parentTable.removeChild(tableRemove)
+}
+
+console.log('');
 
 window.onload = function(){
-    hideButton()
+    console.log("Page is correctly loaded");
+    hideImageButton()
     hideShowTableButton()
-    deleteLastLetter()
+    deleteTD()
 }
 
 

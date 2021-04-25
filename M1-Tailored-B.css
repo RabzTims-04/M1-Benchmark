@@ -3,15 +3,23 @@ body{
     text-align: center;
 }
 
-img{
+ .Image{
     height: 50px;
 	background-attachment: fixed;
+    vertical-align: middle;
+    text-align: center;
+    background-attachment: fixed;
 }
+
+table.nospacing { border-spacing: 0; }
+
+table.nospacing th, td { padding: 0; }
 
 table #myTable {
     width:70%; 
     margin-left:15%; 
     margin-right:15%;
+    border-collapse: collapse;
   }
 
   table.center {
@@ -94,7 +102,7 @@ tr td:last-child {
   }
 
   .test{
-      background-color: red;
+      background-color: lightgrey;
   }
 
   .ol-center {
@@ -118,7 +126,27 @@ tr td:last-child {
   .url-mouse {
     border-radius: 20px;
   }
-  
+
+  .tdBackground{
+      background-color: hotpink;
+  }
+
+  .pink-border{
+    border-right: 2px double hotpink;
+    border-top: 2px double hotpink;
+    border-left: 2px double hotpink;
+    border-bottom: 2px double hotpink;
+  }
+
+  /* .Image{
+    /* display: table-cell; */
+    /* height: 300px; */
+    /* text-align: center; */
+    /* width: 300px; */
+    /* vertical-align: middle; */
+    /* height: 50px; */
+	/* background-attachment: fixed; */
+  /* }  */
 
 /* CSS EXERCISES
 

@@ -11,6 +11,7 @@
     
     <div id="container">
         <h1>My First Benchmark Project</h1>
+        <button type="button" class="button-class" onclick="headingChange()">headingChange</button>
     </div>
    
 
@@ -24,40 +25,70 @@
         <li>EXTRA</li>
     </ol>
 
+    <button type="button" class="button-class" onclick="extraTableRow()">Add Extra Row</button>
+    <button type="button" class="button-class" onclick="addClasstest()">Add Class Test</button>
+    <button type="button" class="button-class" onclick="redBackground()">Add/remove RedBg to links</button>
+ 
+    <br> 
+    <hr>
+
+    <div style="margin: 0 auto; width: 656px; text-align: center;" class="java-button">
+
+    </div>
+
+    <hr>
     <br>
 
-    <table id="myTable" class="table-borders center">
-        <tr>
-            <th>&nbsp;</th>
-            <th>&nbsp;</th>
-            <th>&nbsp;</th>
-            <th>&nbsp;</th>
-            <th>&nbsp;</th>
-        </tr>
+    <div class='table-div'>
+        <table id="myTable" class="table-borders center">
+            <tr>
+                <th>&nbsp;</th>
+                <th>Images</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+            </tr>
+    
+            <tr class="table-cell">
+                <td class ="td">1</td>
+                <td class ="td"><a target="_blank" href="https://www.youtube.com/watch?v=OpdmYq2pUCI&t=2724s&ab_channel=StriveSchool"><img src="html.png" alt="centered image" class="Image"></a></td>
+                <td class ="td" colspan="2">2</td>           
+                <td class ="td">3</td>
+            </tr>
+    
+            <tr class="table-cell">
+                <td class ="td">1;</td>
+                <td class ="td"><a target="_blank" href="https://www.youtube.com/watch?v=GNPczMvJmFI&ab_channel=StriveSchool" ><img src="css.png" alt="centered image" class="Image"></a></td>
+                <td class ="td">2</td>
+                <td class ="td">3</td>
+                <td class ="td">4</td>
+            </tr>
+    
+            <tr class="table-cell">
+                <td class ="td">1</td>
+                <td class ="td"><a target="_blank" href="https://www.youtube.com/watch?v=7-gp4XPclpE&ab_channel=StriveSchool"><img src="js-logo.png" alt="centered image" class="Image"></a></td>
+                <td class ="td">2</td>
+                <td class ="td">3</td>
+                <td class ="td">4</td>
+            </tr>
+        </table>
+    </div>
 
-        <tr>
-            <td class ="td">1</td>
-            <td class ="td"><a target="_blank" href="https://www.youtube.com/watch?v=OpdmYq2pUCI&t=2724s&ab_channel=StriveSchool"><img src="html.png" alt="HTML Logo" class="Image"></a></td>
-            <td class ="td" colspan="2">2</td>           
-            <td class ="td">3</td>
-        </tr>
+    <br>
 
-        <tr>
-            <td class ="td">1;</td>
-            <td class ="td"><a target="_blank" href="https://www.youtube.com/watch?v=GNPczMvJmFI&ab_channel=StriveSchool" ><img src="CSS.png" alt="CSS Logo" class="Image"></a></td>
-            <td class ="td">2</td>
-            <td class ="td">3</td>
-            <td class ="td">4</td>
-        </tr>
+    <button type="button" class="button-class" onclick="addTable()">Add New Table</button>
+    <button type="button" class="button-class" onclick="removeTable()">Remove Table</button>
 
-        <tr>
-            <td class ="td">1</td>
-            <td class ="td"><a target="_blank" href="https://www.youtube.com/watch?v=7-gp4XPclpE&ab_channel=StriveSchool"><img src="js-logo.png" alt="JavaScript Logo" class="Image"></a></td>
-            <td class ="td">2</td>
-            <td class ="td">3</td>
-            <td class ="td">4</td>
-        </tr>
-    </table>
+    <br>
+
+    <hr>
+
+    <div class ='new-table' id='insert-table'>
+        
+
+    </div>
+
+    <br>
 
     <hr>
 
@@ -66,6 +97,13 @@
             <p>You will be taught basic html, Css and JavaScript</p>
                 <p>In 1 week's time, you will be able to create your own first website</p>
     </div>
+
+    <br>
+    <input type="text" id="li-input">
+    <button type="button" class="button-class" onclick="addNewItems()">Add new list</button>
+    <button type="button" class="button-class" onclick="emptyList()">Empty list</button>
+
+    <br>   
 
     <div id ="nested-ul">
         <h5>How to plan:</h5>
