@@ -162,6 +162,19 @@ console.log(arraySum(arr1,arr2));
 console.log('');
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>DOM<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+function darkMode(){
+    let body = document.body
+    body.classList.toggle('dark-mode')
+}
+
+function buttonChange(){
+    let buttons = document.getElementsByTagName('button')
+    let thead = document.getElementsByTagName('th')
+    for(let i=0; i<buttons.length; i++){
+        buttons[i].classList.toggle('dark-button')
+        thead[i].classList.toggle('th-dark')
+    }
+}
 
  // 31) Get element with ID "container" from the page
 console.log('*************EXERCISE 31***************');
@@ -201,18 +214,28 @@ console.log('');
 console.log('*************EXERCISE 34***************');
 console.log('');
 
-let bool = true
 const headingChange = function(){
     let heading = document.querySelector('h1')
-    if(bool === true){
+    if(heading.innerText === 'My First Benchmark Project'){
         heading.innerText = 'First Project M1'
     }
     else{
-        heading.innerText = 'My First Benchmark Project'
-    }
-    
-    bool = !bool  
+        heading.innerText = 'My First Benchmark Project'  
 }
+}
+
+// let bool = true
+// const headingChange = function(){
+//     let heading = document.querySelector('h1')
+//     if(bool === true){
+//         heading.innerText = 'First Project M1'
+//     }
+//     else{
+//         heading.innerText = 'My First Benchmark Project'
+//     }
+    
+//     bool = !bool  
+// }
 
 console.log('');
 
@@ -262,19 +285,26 @@ console.log('');
 console.log('*************EXERCISE 37***************');
 console.log('');
 
-let bg= true
 const redBackground = function(){
     let links = document.getElementsByTagName('a')
     for(let i=0; i<links.length; i++){
-        if(bg === true){
-            links[i].style.backgroundColor = "red"
+            links[i].classList.toggle('red-bg')
         }
-        else{
-            links[i].style.backgroundColor = "white"
-        }        
-    }
-    bg= !bg
 }
+
+// let bg= true
+// const redBackground = function(){
+//     let links = document.getElementsByTagName('a')
+//     for(let i=0; i<links.length; i++){
+//         if(bg === true){
+//             links[i].style.backgroundColor = "red"
+//         }
+//         else{
+//             links[i].style.backgroundColor = "white"
+//         }        
+//     }
+//     bg= !bg
+// }
 
 // redBackground()
 
@@ -338,22 +368,19 @@ console.log('');
 console.log('*************EXERCISE 41***************');
 console.log('');
 
-// //  const mouseOver = function(event){
-//     let url = document.getElementsByTagName('a')
-//     let url2 = document.getElementsByTagName('a')
 
-//     for(let i=0; i<url.length; i++){
-//         url[i].addEventListener('mouseover', function(event){
-//             let link = url[i].getAttribute("href")
-//             let urlShow = document.createElement('span')
-//             urlShow.innerText = link
-//             url2[i].parentElement.insertBefore(urlShow, url[i])
-//             event.target.classList.add('url-mouse')
+const mouseOverLink = function(){
+    let links = document.getElementsByTagName('a')
+    for(let i=0; i<links.length; i++){
+        links[i].addEventListener('mouseover', function(e){
+            document.getElementById('foot-link').innerText = e.currentTarget.href
+        }) 
 
-//         },
-//         false
-//         )
-//     }
+        links[i].addEventListener('mouseout', function(e){
+            document.getElementById('foot-link').innerText = ''
+        })
+    }
+}
 
 console.log('');
 
@@ -361,30 +388,39 @@ console.log('');
 console.log('*************EXERCISE 42***************');
 console.log('');
 
+
+
 const hideImageButton = function(){
 
     let hideImgButton = document.createElement('button')
     hideImgButton.innerText = 'Hide Images'
     let bodyParent = document.querySelector('.java-button')
-    hideImgButton.addEventListener('click', hideTableImg)     
+    hideImgButton.addEventListener('click', hideShowImage)     
     bodyParent.appendChild(hideImgButton)
 }
 
-let initialImage = true
-function hideTableImg(){
-    let images = document.getElementsByTagName('img')
-    for(let i=0; i<images.length; i++){
-        if(initialImage === true){
-            images[i].style.display = 'none'
-        }
-        else{
-            images[i].style.display = 'block'
-
-            images[i].style.paddingLeft = '35%'           
-        }  
+function hideShowImage(){
+    let tableImages = document.getElementsByTagName('img')
+    for(let i=0; i<tableImages.length; i++){
+        tableImages[i].classList.toggle('hide-image')
     }
-    initialImage = !initialImage
 }
+
+// let initialImage = true
+// function hideTableImg(){
+//     let images = document.getElementsByTagName('img')
+//     for(let i=0; i<images.length; i++){
+//         if(initialImage === true){
+//             images[i].style.display = 'none'
+//         }
+//         else{
+//             images[i].style.display = 'block'
+
+//             images[i].style.paddingLeft = '35%'           
+//         }  
+//     }
+//     initialImage = !initialImage
+// }
 
 
 console.log('');
@@ -487,22 +523,9 @@ const deleteTD = function(){
 }
 
 function deleteRand(){
-    // let tableCell = document.getElementsByTagName('td')
-    // let tableRow = document.querySelectorAll('.table-cell')
-    let tableRow = document.getElementById('myTable')
-    // console.log(tableRow);
-    // let randomArray = []
-
-    // for(let i=0; i<tableData.length; i++){
-    //     let random = Math.floor(Math.random() * tableData.length)
-    //         randomArray.push(random)
-    //     } 
-
-    for(let i=1; i<4; i++){
-        // let newRandom = randomArray[j]
-        tableRow.rows[i].deleteCell(-1)
-    }
-    // console.log(tableData);
+    let tableCell = document.getElementsByTagName('td')
+    let randomNum = Math.floor(Math.random() * tableCell.length)
+    tableCell[randomNum].style.display = 'none'
 }
 
 console.log('');
@@ -510,67 +533,28 @@ console.log('');
 // 48) Add a pink border to a cell when the mouse is over it
 console.log('*************EXERCISE 48***************');
 console.log('');
-// let border = true
-// const addBorder = function(){
-
-//     let tdCell = document.getElementsByTagName('td')
-
-//     for(let i=0; i<tdCell.length; i++){
-//         tdCell[i].addEventListener("mouseover", b => {if(border === true ){b.target.classList.add('pink-border')}else{b.target.classList.remove('pink-border')}})
-   
-//     }
-//     border = !border
-
-// }
-// addBorder()
 
 const addBorder = function(){
 
     let tdCell = document.getElementsByTagName('td')
 
     for(let i=0; i<tdCell.length; i++){
-        tdCell[i].addEventListener("mouseover", b => b.target.classList.add('pink-border')) 
-   
+        tdCell[i].addEventListener("mouseover", e => e.currentTarget.style.border ='2px solid pink'    
+        )
+        tdCell[i].addEventListener("mouseout", e => e.currentTarget.style.border =''
+        )}
     }
 
-}
 addBorder()
 
-const removeBorder = function(){
-    let tdCell = document.getElementsByTagName('td')
-
-    for(let i=0; i<tdCell.length; i++){
-        tdCell[i].addEventListener("mouseout", c => c.target.classList.remove('pink-border')) 
-   
-    }
-}
-
-removeBorder()
-// const addBorder = function(){
+// const removeBorder = function(){
 //     let tdCell = document.getElementsByTagName('td')
 
 //     for(let i=0; i<tdCell.length; i++){
-//         tdCell[i].addEventListener('mouseover',borderPink)
-//     }
+//         tdCell[i].addEventListener("mouseout", e => e.currentTarget.style.border =''
+//         )}
 // }
-// addBorder()
-
-// let border = true
-// function borderPink(event){
-//     let tdCell = document.getElementsByTagName('td')
-//     for(let i=0; i<tdCell.length; i++){
-//         if(border === true){
-//             tdCell[i].target.classList.add('pink-border')
-//         }
-//         else{
-//             tdCell[i].target.classList.remove('pink-border')
-//         }
-      
-//     }   
-//     border = !border
-// }
-
-   
+// removeBorder()
 
 console.log('');
 
@@ -619,6 +603,7 @@ window.onload = function(){
     hideImageButton()
     hideShowTableButton()
     deleteTD()
+    mouseOverLink()
 }
 
 

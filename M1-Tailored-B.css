@@ -131,11 +131,27 @@ tr td:last-child {
       background-color: hotpink;
   }
 
-  .pink-border{
-    border-right: 2px double hotpink;
-    border-top: 2px double hotpink;
-    border-left: 2px double hotpink;
-    border-bottom: 2px double hotpink;
+  .hide-image{
+      display: none;
+  }
+
+  .red-bg{
+      background-color: red;
+  }
+
+  .dark-mode{
+      background-color: black;
+      color: white;
+  }
+
+  .dark-button{
+      background-color: white;
+      color: black;
+  }
+
+  .th-dark{
+      background-color: blue;
+      color: white;
   }
 
   /* .Image{
