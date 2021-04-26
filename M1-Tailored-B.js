@@ -269,12 +269,19 @@ console.log('');
 // 36) Write a function to add the class "test" to each row in the table
 console.log('*************EXERCISE 36***************');
 console.log('');
-
+let classAdd = true
 const addClasstest = function(){
     let tableRows = document.getElementsByTagName('tr')
     for(let i=0; i<tableRows.length; i++){
-        tableRows[i].classList.add('test')
+        if(classAdd === true){
+            tableRows[i].classList.add('test')  
+        }
+        else{
+            tableRows[i].classList.remove('test')
     }
+}
+
+classAdd = !classAdd
 }
 
 // addClasstest()
@@ -367,7 +374,6 @@ console.log('');
 // 41) Add an eventListener to alert when the mouse is over a link, displaying the URL
 console.log('*************EXERCISE 41***************');
 console.log('');
-
 
 const mouseOverLink = function(){
     let links = document.getElementsByTagName('a')
